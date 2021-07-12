@@ -16,3 +16,10 @@ vector<int> CyclicRotation(vector<int> &A, int K) {
 
     return ret;
 }
+
+int OddOccurrencesInArray(vector<int> &A) {
+    int ret = 0;
+    for( int a: A )
+        ret ^= a;
+    return ret;
+}

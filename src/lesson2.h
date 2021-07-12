@@ -4,5 +4,6 @@
 #include "common.h"
 
 vector<int> CyclicRotation(vector<int> &A, int K);
+int OddOccurrencesInArray(vector<int> &A);
 
 #endif  // __LESSON_2_H_
