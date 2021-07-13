@@ -7,4 +7,6 @@
 
 using namespace std;
 
+#define GAP(x,y)    (x)>(y)?(x)-(y):(y)-(x)
+
 #endif  // __COMMON_H_

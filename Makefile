@@ -1,5 +1,5 @@
 CXX		:= gcc
-CXXFLAGS:= -g -Wall
+CXXFLAGS:= -g -std=c++11 -Wall
 LDFLAGS := -lstdc++
 
 SRCDIR	:= ./src
