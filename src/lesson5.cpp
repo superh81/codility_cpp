@@ -53,3 +53,52 @@ vector<int> GenomicRangeQuery(string &S, vector<int> &P, vector<int> &Q) {
     delete[] impacts;
     return ret;
 }
+
+int MinAvgTwoSlice(vector<int> &A) {
+    int i=0, N=A.size();
+    float min_val=10001.0f, val;
+    int min_id=0;
+
+    while( N > 2 ) {
+        val = (A[i] + A[i+1])/2.0;
+        if( val < min_val ) {
+            min_val = val;
+            min_id = i;
+        }
+
+        val = (A[i] + A[i+1] + A[i+2])/3.0;
+        if( val < min_val ) {
+            min_val = val;
+            min_id = i;
+        }
+
+        i++;
+        N--;
+    }
+
+    val = (A[i] + A[i+1])/2;
+    if( val < min_val ) {
+        min_val = val;
+        min_id = i;
+    }
+
+    return min_id;
+}
+
+int PassingCars(vector<int> &A) {
+    int N=A.size()-1, pairs=0, Q=0;
+
+    while( N >= 0 ) {
+        if( A[N] == 0 )
+            pairs += Q;
+        else
+            Q++;
+
+        if( pairs > 1000000000 )
+            return -1;
+
+        N--;
+    }
+
+    return pairs;
+}
